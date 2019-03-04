@@ -20,7 +20,8 @@ CREATE TABLE User (
     YearOfStudy     NUMBER(1) DEFAULT 1,
     phoneNumber     NUMBER(14) NOT NULL,
     StudentID     NUMBER(9) NOT NULL,
-    Email     VARCHAR2(30) NOT NULL
+    Email     VARCHAR2(30) NOT NULL,
+    DateOfRegistration    DATE NOT NULL,
     
 );
 
@@ -30,12 +31,12 @@ PROMPT Inserting data into User table...
 
 INSERT INTO User VALUES (
 	'student1', 'password1', 'Name', 1, 
-	00447996767656, 170912345, 'email@gmail.com'
+	00447996767656, 170912345, 'email@gmail.com', GETDATE('DD-MON-YYYY')
 );
 
 INSERT INTO User VALUES (
     'tutor1', 'password2', 'Name2', 2, 
-    00447399767656, 170976545, 'email2@gmail.com'
+    00447399767656, 170976545, 'email2@gmail.com', TO_DATE('02-MAR-2019', 'DD-MON-YYYY')
 );
 
 PROMPT Data inserted into User table.
